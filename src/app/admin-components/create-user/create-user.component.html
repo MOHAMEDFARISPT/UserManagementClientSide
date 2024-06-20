@@ -1,0 +1,72 @@
+
+<div>
+    <app-admin-nav></app-admin-nav>
+<div class="container" >
+    <div class="wrapper">
+        <form [formGroup]="registrationform" (ngSubmit)="registrationform.valid && onSubmit()">
+            <p class="text-center" style="font-size: larger;">Add user</p>
+            <div class="form-outline mb-4">
+                <label class="form-label" for="name">Name</label>
+                <input type="text" id="name" class="form-control" formControlName="name" placeholder="Enter your  name.." required pattern="[A-Za-z]{1,32}"> 
+                <div *ngIf="registrationform.get('name').touched && registrationform.get('name').errors?.['required']" style="color: red;">
+                  Name is required
+                </div>
+                <div *ngIf="registrationform.get('name').touched && registrationform.get('name').errors?.['pattern']" style="color: red;">
+                  Name cannot contain spaces or numbers
+                </div>
+              </div>
+
+
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="name">username</label>
+                <input type="text" id="username" class="form-control" formControlName="username" placeholder="Enter your  username.." required pattern="^(?=.*\d)(?=.*_)[A-Za-z0-9_]+$"> 
+                <div *ngIf="registrationform.get('username').touched && registrationform.get('username').errors?.['required']" style="color: red;">
+                    username is required
+                </div>
+                <div *ngIf="registrationform.get('username').touched && registrationform.get('username').errors?.['pattern']" style="color: red;">
+                    Username must contain alphabets, numbers, and an underscore
+                </div>
+              </div>
+          
+             
+
+
+          
+              <div class="form-outline mb-4">
+                <label class="form-label" for="name">email</label>
+                <input type="text" id="email" class="form-control" formControlName="email" placeholder="Enter your  email.." required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> 
+                <div *ngIf="registrationform.get('email').touched && registrationform.get('email').errors?.['required']" style="color: red;">
+                    incorrect email format
+                </div>
+                <div *ngIf="registrationform.get('email').touched && registrationform.get('email').errors?.['pattern']" style="color: red;">
+                    incorrect email format
+                </div>
+              </div>
+
+          
+              <div class="form-outline mb-4">
+                <label class="form-label" for="name">password</label>
+                <input type="password" id="password" class="form-control" formControlName="password" placeholder="Enter your  password.." required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$" > 
+                <div *ngIf="registrationform.get('password').touched && registrationform.get('password').errors?.['required']" style="color: red;">
+                    Password is required
+                </div>
+                <div *ngIf="registrationform.get('password').touched && registrationform.get('password').errors?.['pattern']" style="color: red;">
+                    Password must contain at least one lowercase letter, one uppercase letter, one digit, one special character, and be at least 8 characters long
+                </div>
+              </div>
+
+          
+            <div class="text-center pt-1 mb-5 pb-1">
+              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Add user</button>
+              
+            </div>
+          </form>
+    </div>
+   
+</div>
+
+
+   
+</div>
+

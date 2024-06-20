@@ -1,0 +1,52 @@
+
+<div>
+    <div>
+        <nav class="navbar navbar-light ">
+          <a class="navbar-brand" style="color: white; padding-left: 50px;">Capture</a>
+          <div class="ml-auto">
+           
+            <button class="btn btn-outline-light my-2 my-sm-0" style="margin-right: 10px; color:white;" type="button" (click)="logout()">Logout</button>
+          </div>
+        </nav>
+      </div>
+      
+      <section class="body">
+        <h2 class="text-center" style="font-size: large ; font-weight:bold">Welcome to Home</h2>
+        <section class="section-center">
+          <div class="card card-custom" *ngIf="user$ | async as user">
+            <div class="rounded-container">
+              <img class="card-img-top rounded-image" [src]="imageUrl" alt="profileImage">
+            </div>
+            <div class="card-body" style="margin-top: 10px;">
+              <div style="margin-bottom: 10px;">
+                <label for="profileImage">Profile Image:</label>
+               <!-- image-upload.component.html -->
+               <input #imageInput  type="file" (change)="onFileSelected($event)" accept="image/*">
+
+
+               
+
+
+              </div>
+              <table style="width: 100%">
+                <tr>
+                  <td style="align-items: start; font-weight: bold; width: 50%;">Name:</td>
+                  <td style="text-align: center;">{{ user.name }}</td>
+                </tr>
+                <tr>
+                  <td style="align-items: start; font-weight: bold; width: 50%;">Username:</td>
+                  <td style="text-align: center;">{{ user.username }}</td>
+                </tr>
+                <tr>
+                  <td style="align-items: start; font-weight: bold; width: 50%;">Email:</td>
+                  <td style="text-align: center;">{{ user.email }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+      </section>
+      
+      <app-footer></app-footer>
+</div>
+

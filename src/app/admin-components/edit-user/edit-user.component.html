@@ -1,0 +1,64 @@
+
+<div>
+    <app-admin-nav></app-admin-nav>
+<div class="container" >
+    <div class="wrapper" >
+        <form [formGroup]="editForm" (ngSubmit)="editForm.valid && onSubmit()">
+            <p class="text-center" style="font-size: larger;">Edit user Detailes</p>
+            <div class="form-outline mb-4">
+                <label class="form-label" for="name">Name</label>
+                <input type="text" id="name" class="form-control" formControlName="name" placeholder="Enter your  name.." required pattern="[A-Za-z]{1,32}"> 
+                <div *ngIf="editForm.get('name')?.touched && editForm.get('name')?.errors?.['required']" style="color: red;">
+                  Name is required
+                </div>
+                <div *ngIf="editForm.get('name')?.touched && editForm.get('name')?.errors?.['pattern']" style="color: red;">
+                  Name cannot contain spaces or numbers
+                </div>
+              </div>
+
+
+
+              <div class="form-outline mb-4">
+                <label class="form-label" for="name">username</label>
+                <input type="text" id="username" class="form-control" formControlName="username" placeholder="Enter your  username.." required pattern="^(?=.*\d)(?=.*_)[A-Za-z0-9_]+$"> 
+                <div *ngIf="editForm.get('username')?.touched && editForm.get('username')?.errors?.['required']" style="color: red;">
+                    username is required
+                </div>
+                <div *ngIf="editForm.get('username')?.touched && editForm.get('username')?.errors?.['pattern']" style="color: red;">
+                    Username must contain alphabets, numbers, and an underscore
+                </div>
+              </div>
+          
+             
+
+
+          
+              <div class="form-outline mb-4">
+                <label class="form-label" for="name">email</label>
+                <input type="text" id="email" class="form-control" formControlName="email" placeholder="Enter your  email.." required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> 
+                <div *ngIf="editForm.get('email')?.touched && editForm.get('email')?.errors?.['required']" style="color: red;">
+                    incorrect email format
+                </div>
+                <div *ngIf="editForm.get('email')?.touched && editForm.get('email')?.errors?.['pattern']" style="color: red;">
+                    incorrect email format
+                </div>
+              </div>
+
+          
+              
+
+          
+            <div class="text-center pt-1 mb-5 pb-1">
+              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Edit user</button>
+              
+            </div>
+          </form>
+    </div>
+   
+</div>
+
+
+   
+</div>
+
+

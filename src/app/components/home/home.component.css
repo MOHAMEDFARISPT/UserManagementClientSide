@@ -1,0 +1,61 @@
+
+
+h1{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    height:85vh ;
+   
+}
+
+.navbar{
+   background-color:black;
+    height: 10%;
+}
+
+
+
+.section-center {
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: black;
+    
+    
+  }
+  
+  .card-custom {
+    width: 22rem;
+    height: 25rem;
+    border-color: black;
+    border-width: 3px;
+    background-color:balck
+  
+    
+
+    
+  }
+
+  .rounded-container {
+    width: 150px; /* Set your desired width */
+    height: 150px; /* Ensure the height is the same as the width */
+    border-radius: 50%;
+    overflow: hidden; /* Ensure the image doesn't overflow the div */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black; 
+  }
+  
+  .rounded-image {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    
+  }
+
+ 
+  
+
+
+
